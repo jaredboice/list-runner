@@ -4,6 +4,8 @@
 
 # List-Runner Documentation
 
+![List-Runner](screenshots/list-runner-logo.png "Within Cells Interlinked")
+
 ## Description
 
 **List-Runner** is a lightweight _linked-list_ implementation that offers both _Singly_ _(next)_ 
