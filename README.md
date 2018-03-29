@@ -1,6 +1,6 @@
 
 
-#Copyright 2018 Jared Boice - Open Source/MIT License
+# Copyright 2018 Jared Boice (MIT License / Open Source)
 
 # List-Runner Documentation
 
@@ -15,7 +15,7 @@ Singly cell instances have getNext() and setNext() functions.
 Doubly cell instances additionally have getPrev() and setPrev() functions.
 All other operations are controlled by the Stem instance. There are two types of stems for both singly and doubly data structures.
 
-##Install, Import && Instantiate
+## Install, Import && Instantiate
 
 **Install**
 
@@ -51,9 +51,9 @@ const stemCells = [cell1, cell2, cell3];
 const structureType = DOUBLY;
 const stem = initializeStem(stemCells, structureType);
 
-##Classes
+## Classes
 
-###CellSingly
+### CellSingly
 
 consumption model:
   + methods
@@ -96,7 +96,7 @@ setNext(cell):
   + parameters: 
     + cell: the next cell to be linked
 
-###CellDoubly
+### CellDoubly
 
 consumption model:
   + methods
@@ -153,7 +153,7 @@ setPrev(cell):
   + parameters: 
     + cell: the previous cell to be linked
 
-###StemSingly
+### StemSingly
 
 consumption model:
   + methods
@@ -251,7 +251,7 @@ unlinkNext(cell1, cell3):
     + cell1
     + cell3
 
-###StemDoubly
+### StemDoubly
 
 consumption model:
   + methods
@@ -313,14 +313,14 @@ unlinkPrev(cell1, cell3):
     + cell1
     + cell3
 
-###SentinelSingly && SentinelDoubly
+### SentinelSingly && SentinelDoubly
 
 _note_: the head doubly sentinel is instantiated with prev pointing to null.
 both the singly and doubly tail sentinels are instantiated with next pointing to null. 
 
 _(see codebase)_
 
-##Sidekick _(helper functions)_
+## Sidekick _(helper functions)_
 
 interlinkStem():
   + description: takes an array of instantiated cells and interlinks them into a newly instantiated stem
