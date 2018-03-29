@@ -11,8 +11,8 @@ and _Doubly_ data structures _(next and previous)_.
 
 Nodes are referred to as cells and the list is referred to as a stem.
 
-Singly cell instances have getNext() and setNext() functions. 
-Doubly cell instances additionally have getPrev() and setPrev() functions.
+Singly cell instances have getNext() and setNext() methods. 
+Doubly cell instances additionally have getPrev() and setPrev() methods.
 All other operations are controlled by the Stem instance. There are two types of stems for both singly and doubly data structures.
 
 ## Summary
