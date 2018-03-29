@@ -15,6 +15,10 @@ Singly cell instances have getNext() and setNext() functions.
 Doubly cell instances additionally have getPrev() and setPrev() functions.
 All other operations are controlled by the Stem instance. There are two types of stems for both singly and doubly data structures.
 
+## Summary
+
+find "consumption model" to see the consumable methods for each class.
+
 ## Install, Import && Instantiate
 
 **Install**
