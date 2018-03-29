@@ -1,0 +1,19 @@
+{
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "semi": ["error": "always"],
+        "comma-dangle": ["error", "always"],
+        "no-cond-assign": ["error", "always"],
+        "no-console": "on",
+        "no-set-state": "on",
+        "no-template-curly-in-string": "error",
+        "no-redeclare": "error",
+        "wrap-iife": "error",
+        "no-undef": "error"
+    },
+        "plugins": [
+        "react"
+    ],
+}
