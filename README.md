@@ -370,7 +370,3 @@ countBackward(baseline)
   + parameters: 
     + baseline: the cell at which to begin the counting process
   + returns: the total count of all interlinked cells
-
-TODO: finish Sidekick documentation
-
-TODO: add install documentation and instantiation documentation
