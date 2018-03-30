@@ -23,28 +23,28 @@ All other operations are controlled by the Stem instance. There are two types of
 
 **Install**
 
-`npm install --save list-runner`
+```npm install --save list-runner```
 
 **Import**
 
 _importing the commonly needed classes_  
-`import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';`
+```import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';```
 
 _importing the constants_  
-`import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';`
+```import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';```
 
 _importing the sidekick functions_    
-`import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';`
+```import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';```
 
 _importing less commonly needed classes_ 
-`import { SentinelSingly, SentinelDoubly } from 'list-runner';`
+```import { SentinelSingly, SentinelDoubly } from 'list-runner';```
 
 **Instantiate**
 
 _solo instantiation_
 
-`const cell = new CellDoubly();`       
-`const stem = new StemDoubly(cell);`
+```const cell = new CellDoubly();     
+const stem = new StemDoubly(cell);```
 
 _connective instantiation_
 
