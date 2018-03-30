@@ -43,16 +43,16 @@ _importing less commonly needed classes_
 
 _solo instantiation_
 
-`const cell = new CellDoubly();`    
+`const cell = new CellDoubly();`       
 `const stem = new StemDoubly(cell);`
 
 _connective instantiation_
 
-`const cell1 = new CellDoubly(); `   
-`const cell2 = new CellDoubly();`    
-`const cell3 = new CellDoubly();`    
-`const stemCells = [cell1, cell2, cell3];`    
-`const structureType = DOUBLY;`    
+`const cell1 = new CellDoubly();`     
+`const cell2 = new CellDoubly();`      
+`const cell3 = new CellDoubly();`      
+`const stemCells = [cell1, cell2, cell3];`      
+`const structureType = DOUBLY;`      
 `const stem = initializeStem(stemCells, structureType);`
 
 ## Classes
