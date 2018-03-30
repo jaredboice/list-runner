@@ -2,7 +2,7 @@
 
 # Copyright 2018 Jared Boice (MIT License / Open Source)
 
-# List-Runner Documentation SUMMARIZED
+# List-Runner Documentation SUMMARY
 
 get the [full documentation](https://github.com/jaredboice/list-runner) at gitHub.
 
@@ -23,171 +23,123 @@ All other operations are controlled by the Stem instance. There are two types of
 
 **Install**
 
-```npm install --save list-runner```
+`npm install --save list-runner`
 
 **Import**
 
-_importing the commonly needed classes_  
-```import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';```
+_importing the commonly needed classes_
+```javascript  
+import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';
+```
 
-_importing the constants_  
-```import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';```
+_importing the constants_
+```javascript  
+import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';
+```
 
-_importing the sidekick functions_    
-```import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';```
+_importing the sidekick functions_
+```javascript    
+import { initializeStem, findForward, findBackward, runForward, runBackward, countForward, countBackward } from 'list-runner';
+```
 
-_importing less commonly needed classes_ 
-```import { SentinelSingly, SentinelDoubly } from 'list-runner';```
+_importing less commonly needed classes_
+```javascript  
+import { SentinelSingly, SentinelDoubly } from 'list-runner';
+```
 
 **Instantiate**
 
 _solo instantiation_
 
-```const cell = new CellDoubly();     
-const stem = new StemDoubly(cell);```
+```javascript
+const cell = new CellDoubly();    
+const stem = new StemDoubly(cell);
+```
 
 _connective instantiation_
 
-`const cell1 = new CellDoubly();`       
-`const cell2 = new CellDoubly();`        
-`const cell3 = new CellDoubly();`        
-`const stemCells = [cell1, cell2, cell3];`        
-`const structureType = DOUBLY;`        
-`const stem = initializeStem(stemCells, structureType);`
+```javascript
+const cell1 = new CellDoubly();    
+const cell2 = new CellDoubly();    
+const cell3 = new CellDoubly();    
+const stemCells = [cell1, cell2, cell3];    
+const structureType = DOUBLY; // imported constant    
+const stem = initializeStem(stemCells, structureType);
+```
 
-## Classes
+_examples_
 
-### CellSingly
+```javascript
 
-consumption model:
-  + methods
-    + getNext()
+// assume the following are not strings
+const baseline = 'some arbitrary cell on the stem'; // substitute a cell on the stem
+const cell = 'some new cell'; // substitute a newly instantiated cell
+const cells = 'an array of cells'; // substitute an array of unlinked cells
 
-SENTINEL.next --> CELL.next --> CELL.next --> CELL.next --> SENTINEL.next --> null
+/* CELL OPERATIONS */
+const nextCell = cell.getNext();
+const prevCell = cell.getPrev(); // only DOUBLY data-structure
 
-**Constructor**
+/* STEM OPERATIONS */
+const head = stem.getHead();
+const tail = stem.getTail(); // only DOUBLY data-structure
+insert(cell, baseline);
+extract(baseline);
+unshift(cell);
+shift();
+push(cell); // only DOUBLY data-structure
+pop(); // only DOUBLY data-structure
+replace(cell, baseline);
+delete(baseline);
+```
 
-new CellSingly(next)
+```javascript
+// assume the following are not strings
+const comparator = 'a callback function that returns true when the right cell is found'; // receives each cell
+const callBackParams 'any kind of parameters that you want to pass to the callBack function';
+const callBack = 'a custom callback function that will receive each cell from a loop and also callBackParams'; // receives each cell and callBackParams
 
-_note_: cells do not require constructor parameters. They can be instantiated and then later linked to other cells at any time. Type can be CELL || SENTINEL || [custom] _(do not use SENTINEL without a full understanding of the codebase)_
+/* SIDEKICK FUNCTIONS */
+interlink(cells);
+const foundCell1 = findForward(baseline, comparator);
+const foundCell2 = findBackward(baseline, comparator);
+const lastCellInLoop1 = runForward(baseline, callBack, callBackParams);
+const lastCellInLoop2 = runBackward(baseline, callBack, callBackParams);
+const totalCount1 = countForward(baseline);
+const totalCount2 = countBackward(baseline);
 
-### CellDoubly
+/* findForward / findBackward comparator callback examples */
 
-consumption model:
-  + methods
-    + getNext()
-    + getPrev()
+// pure
+export const findComparator1 = (cell) => {
+  return cell.id === 'KD6-3.7';
+};
 
-null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
+// curried
+export const findComparator2 = (id) => {
+    return (cell) => {
+        return cell.id === id;
+    };
+};
 
-**Constructor**
+const myComparator = findComparator2('KD6-3.7');
+const foundCell3 = findForward(baseline, myComparator);
 
-new CellDoubly(next, prev)
+/* runForward / runBackward callback examples */
 
-_note_: cells do not require constructor parameters. They can be instantiated and then later linked to a stem at any time. Type can be CELL || SENTINEL || [custom] _(do not use SENTINEL without a full understanding of the codebase)_
+// pure
+export const runCallBack2 = (cell, callBackParams) => {
+    return cell.id === id;
 
-### StemSingly
+};
 
-class: StemSingly
-  + description:  a node list that interlinks other nodes by their next properties. controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing next
-  + constructor: 
-    + head: starting cell for the stem-cell sequence
+// curried
+export const runCallBack2 = (id) => {
+    return (cell, callBackParams) => {
+        return cell.id === id;
+    };
+};
 
-consumption model:
-  + methods
-    + getHead()
-    + interlink(cells)
-    + insert(cell, baseline)
-    + extract(baseline)
-    + unshift(cell)
-    + shift()
-    + replace(cell, baseline)
-    + delete(baseline)
-
-SENTINEL.next --> CELL.next --> CELL.next --> CELL.next --> SENTINEL.next --> null
-
-**Constructor**
-
-new StemSingly(head)
-
-parameters:
-  + head: the head cell _(required)_
-
-_note_: stems require at least one cell. The head cell can be solo or linked to a chain of cells by its next property.
-
-### StemDoubly
-
-class: StemDoubly
-  + description:  a node list that interlinks other nodes by their next and prev properties. controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing prev and next
-  + constructor: 
-    + head: starting cell for the stem-cell sequence
-
-consumption model:
-  + methods
-    + getHead()
-    + interlink(cells)
-    + insert(cell, baseline)
-    + extract(baseline)
-    + unshift(cell)
-    + shift()
-    + push(cell)
-    + pop()
-    + replace(cell, baseline)
-    + delete(baseline)
-
-null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
-
-**Constructor**
-
-new StemDoubly(head)
-
-## Sidekick _(helper functions)_
-
-interlinkStem():
-  + description: takes an array of instantiated cells and interlinks them into a newly instantiated stem
-  + parameters: 
-    + cells: array of instantiated cells
-    + structureType: SINGLY || DOUBLY
-  + returns: Stem instance
-
-findForward(baseline, comparator):
-  + description: traverses forward through a stem from the provided baseline in search of a specific cell
-  + parameters: 
-    + baseline: the cell at which to begin the search
-    + comparator: custom callback function that returns true || false when comparing a cell for a match against custom criteria
-  + returns: found cell || false
-
-function: findBackward(baseline, comparator): _(for doubly structures only)_
-  + description: traverses backward through a stem from the provided baseline in search of a specific cell
-  + parameters: 
-    + baseline: the cell at which to begin the search
-    + comparator: custom callback function that returns true || false when comparing a cell for a match against custom criteria
-  + returns: found cell || false
-
-loopForward(baseline, callBack, callBackParams):
-  + description: traverses forward through a stem and executes a callback _(until the callback returns true or the loop reaches the edge)_
-    parameters: 
-    + baseline: the cell at which to begin the traversal
-    + callBack: custom function that returns true when the traversal should be shortCircuited and terminated
-    + callBackParams: the callback function gets passed the current cell and then callBackParams as a 2nd parameter
-  + returns: the last cell instance upon loop termination
-
-loopBackward(baseline, callBack, callBackParams): _(for doubly structures only)_
-  + description: traverses backward through a stem and executes a callback _(until the callback returns true or the loop reaches the edge)_
-    parameters: 
-    + baseline: the cell at which to begin the traversal
-    + callBack: custom function that returns true when the traversal should be shortCircuited and terminated
-    + callBackParams: the callback function gets passed the current cell and then callBackParams as a 2nd parameter
-  + returns: the last cell instance upon loop termination
-
-countForward(baseline)
-  + description: traverses forward through a stem, starting with baseline, and returns the total count of cells.
-  + parameters: 
-    + baseline: the cell at which to begin the counting process
-  + returns: the total count of all interlinked cells
-
-countBackward(baseline)
-  + description: traverses backward through a stem, starting with baseline, and returns the total count of cells.
-  + parameters: 
-    + baseline: the cell at which to begin the counting process
-  + returns: the total count of all interlinked cells
+const myCallBack = runCallBack2('KD6-3.7', 'any other arbitrary parameters');
+const lastCellInLoop3 = runForward(baseline, myCallBack, callBackParams);
+```

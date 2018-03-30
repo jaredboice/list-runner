@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import StemSingly from './StemSingly';
 import CellSingly from './CellSingly';
-import { initializeStem, findForward, loopForward, countForward } from '../sidekick';
+import { initializeStem, findForward, runForward, countForward } from '../sidekick';
 import { SENTINEL, SINGLY } from '../constants';
 
 let stem1;
@@ -218,31 +218,31 @@ describe('singly: findForward', () => {
     });
 });
 
-describe('singly: loopForward', () => {
+describe('singly: runForward', () => {
     beforeEach(function () {
         parameters.idCounter = 0;
         stem1 = initTestData();
     });
     afterEach(function () {
-        console.log('singly: loopForward => test complete');
+        console.log('singly: runForward => test complete');
     });
     it('finds a cell with id === 3', function () {
-        const cell = loopForward(stem1.getHead(), loopFunction(3));
+        const cell = runForward(stem1.getHead(), loopFunction(3));
         // the last cell instance upon loop termination
         expect(cells[4]).toEqual(cell);
     });
 });
 
-describe('singly: loopForward off the edge of the stem', () => {
+describe('singly: runForward off the edge of the stem', () => {
     beforeEach(function () {
         parameters.idCounter = 0;
         stem1 = initTestData();
     });
     afterEach(function () {
-        console.log('singly: loopForward off the edge of the stem => test complete');
+        console.log('singly: runForward off the edge of the stem => test complete');
     });
     it('does not find an id', function () {
-        const cell = loopForward(stem1.getHead(), loopFunction(9));
+        const cell = runForward(stem1.getHead(), loopFunction(9));
         // the last cell instance upon loop termination
         expect(cell.type).toBe(SENTINEL);
     });

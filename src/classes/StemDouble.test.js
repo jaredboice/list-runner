@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import StemDoubly from './StemDoubly';
 import CellDoubly from './CellDoubly';
-import { initializeStem, findBackward, loopBackward, countBackward } from '../sidekick';
+import { initializeStem, findBackward, runBackward, countBackward } from '../sidekick';
 import { SENTINEL, DOUBLY } from '../constants';
 import { findFunction, loopFunction, initializeTestData } from './StemSingly.test';
 
@@ -249,31 +249,31 @@ describe('doubly: findBackward', () => {
     });
 });
 
-describe('doubly: loopBackward', () => {
+describe('doubly: runBackward', () => {
     beforeEach(function () {
         parameters.idCounter = 0;
         stem1 = initTestData();
     });
     afterEach(function () {
-        console.log('doubly: loopBackward => test complete');
+        console.log('doubly: runBackward => test complete');
     });
     it('finds a cell with id === 2', function () {
-        const cell = loopBackward(stem1.getTail(), loopFunction(2));
+        const cell = runBackward(stem1.getTail(), loopFunction(2));
         // the last cell instance upon loop termination
         expect(cells[1]).toEqual(cell);
     });
 });
 
-describe('doubly: loopBackward off the edge of the stem', () => {
+describe('doubly: runBackward off the edge of the stem', () => {
     beforeEach(function () {
         parameters.idCounter = 0;
         stem1 = initTestData();
     });
     afterEach(function () {
-        console.log('doubly: loopBackward off the edge fo the stem => test complete');
+        console.log('doubly: runBackward off the edge fo the stem => test complete');
     });
     it('does not find an id', function () {
-        const cell = loopBackward(stem1.getTail(), loopFunction(9));
+        const cell = runBackward(stem1.getTail(), loopFunction(9));
         // the last cell instance upon loop termination
         expect(cell.type).toBe(SENTINEL);
     });

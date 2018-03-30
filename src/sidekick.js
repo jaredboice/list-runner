@@ -60,7 +60,7 @@ export const findBackward = (baseline, comparator) => {
     return false;
 };
 
-/* function: loopForward()
+/* function: runForward()
     description: traverses forward through a stem and executes a callback (until the callback returns true or the loop reaches the edge)
     parameters: 
         baseline: the cell at which to begin the traversal
@@ -68,7 +68,7 @@ export const findBackward = (baseline, comparator) => {
         callBackParams: the callback function gets passed the current cell and then callBackParams as a 2nd parameter
     returns: the last cell instance upon loop termination
 */
-export const loopForward = (baseline, callBack, callBackParams) => {
+export const runForward = (baseline, callBack, callBackParams) => {
     let cell = baseline;
     let shortCircuit = null;
     do {
@@ -78,7 +78,7 @@ export const loopForward = (baseline, callBack, callBackParams) => {
     return cell;
 };
 
-/* function: loopBackward()
+/* function: runBackward()
     description: traverses backward through a stem and executes a callback (until the callback returns true or the loop reaches the edge)
     parameters: 
         baseline: the cell at which to begin the traversal
@@ -86,7 +86,7 @@ export const loopForward = (baseline, callBack, callBackParams) => {
         callBackParams: the callback function gets passed the current cell and then callBackParams as a 2nd parameter
     returns: the last cell instance upon loop termination
 */
-export const loopBackward = (baseline, callBack, callBackParams) => {
+export const runBackward = (baseline, callBack, callBackParams) => {
     let cell = baseline;
     let shortCircuit = null;
     do {
