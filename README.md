@@ -47,8 +47,8 @@ _importing less commonly needed classes_
 
 _solo instantiation_
 
-`const cell = new CellDoubly();    
-const stem = new StemDoubly(cell);`
+```const cell = new CellDoubly();    
+const stem = new StemDoubly(cell);```
 
 _connective instantiation_
 
