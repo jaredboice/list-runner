@@ -90,7 +90,7 @@ _note_: cells do not require constructor parameters. They can be instantiated an
 
 _note_: the following fields should be considered private. Only modify them with a full undertanding of the codebase.
 
-type: "Sentinel" || "Cell" _(Sentinel cells guard the head and tail of the stem from illegal modifications)_
+type: "Sentinel" || "Cell" _(Sentinel cells guard the head and tail of the stem from illegal modifications)_  
 next: next cell instance
 
 **Public Methods**
@@ -124,7 +124,7 @@ consumption model:
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
 
-description: a node that connects bi-directionally between two other nodes by its next and prev properties  
+description: a node that connects bi-directionally between two other nodes by its next and prev properties    
 inherits: all fields and methods from CellSingly
 
 **Constructor**
@@ -142,8 +142,8 @@ _note_: cells do not require constructor parameters. They can be instantiated an
 
 _note_: the following fields should be considered private. Only modify them with a full undertanding of the codebase.
 
-type: "Sentinel" || "Cell" _(Sentinel cells guard the head and tail of the stem from illegal modifications)_
-next: next cell instance
+type: "Sentinel" || "Cell" _(Sentinel cells guard the head and tail of the stem from illegal modifications)_  
+next: next cell instance  
 prev: previous cell instance 
 
 **Public Methods**
@@ -207,7 +207,7 @@ _note_: stems require at least one cell. The head cell can be solo or linked to 
 
 _note_: the following fields should be considered private. Only modify them with a full undertanding of the codebase.
 
-sentinelHead: guards the head of the stem. the next cell is the head
+sentinelHead: guards the head of the stem. the next cell is the head  
 sentinelTail: guards the tail of the stem. the prev cell is the tail
 
 **Public Methods**
@@ -297,7 +297,7 @@ consumption model:
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
 
-description: a node list that interlinks other nodes by their next and prev properties.  
+description: a node list that interlinks other nodes by their next and prev properties.    
 inherits: all fields and methods from StemSingly
 
 **Constructor**
