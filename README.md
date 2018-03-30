@@ -183,7 +183,7 @@ consumption model:
   + methods
     + getHead()
     + interlink(cells)
-    + insert(cell)
+    + insert(baseline)
     + extract(baseline)
     + unshift(cell)
     + shift()
@@ -221,7 +221,7 @@ interlink(cells):
   + description: takes an array of instantiated cells and interlinks them into a stem _(chronologically)_
   + parameters: array of instantiated cells
 
-insert(cell):
+insert(cell, baseline):
   + description: inserts a new cell after baseline and displaces the following cells forward
   + parameters: 
     + cell: new cell to be inserted
@@ -286,7 +286,7 @@ consumption model:
   + methods
     + getHead()
     + interlink(cells)
-    + insert(cell)
+    + insert(cell, baseline)
     + extract(baseline)
     + unshift(cell)
     + shift()
