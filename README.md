@@ -63,6 +63,11 @@ const stem = initializeStem(stemCells, structureType);
 
 ### CellSingly
 
+class: CellSingly
+  + description: includes methods for accessing the next cell
+  + constructor: 
+    + next: next cell in the sequence
+
 consumption model:
   + methods
     + getNext()
@@ -105,6 +110,12 @@ setNext(cell):
     + cell: the next cell to be linked
 
 ### CellDoubly
+
+class: CellDoubly
+  + description: includes methods for accessing the next and prev cells
+  + constructor: 
+    + next: next cell in the sequence
+    + prev: previous cell in the sequence
 
 consumption model:
   + methods
@@ -162,6 +173,11 @@ setPrev(cell):
     + cell: the previous cell to be linked
 
 ### StemSingly
+
+class: StemSingly
+  + description:  controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing next
+  + constructor: 
+    + head: starting cell for the stem-cell sequence
 
 consumption model:
   + methods
@@ -260,6 +276,11 @@ unlinkNext(cell1, cell3):
     + cell3
 
 ### StemDoubly
+
+class: StemDoubly
+  + description:  controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing prev and next
+  + constructor: 
+    + head: starting cell for the stem-cell sequence
 
 consumption model:
   + methods

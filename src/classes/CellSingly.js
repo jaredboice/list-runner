@@ -1,5 +1,11 @@
 import { CELL } from '../constants';
 
+/* 
+  class: CellSingly
+  description: includes methods for accessing the next cell
+  constructor: 
+    next: next cell in the sequence
+*/
 class CellSingly {
     constructor(next = null, type = CELL) {
         this.type = type;
