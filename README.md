@@ -38,11 +38,7 @@ _importing the constants_
   + import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';
 
 _importing the sidekick functions
-  + import { initializeStem,  
-  findForward, findBackward,  
-  loopForward, loopBackward,  
-  countForward, countBackward  
-  } from 'list-runner';
+  + import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';
 
 _importing less commonly needed classes_
   + import { SentinelSingly, SentinelDoubly } from 'list-runner';
@@ -56,11 +52,11 @@ const stem = new StemDoubly(cell);
 
 _connective instantiation_
 
-const cell1 = new CellDoubly();
-const cell2 = new CellDoubly();
-const cell3 = new CellDoubly();
-const stemCells = [cell1, cell2, cell3];
-const structureType = DOUBLY;
+const cell1 = new CellDoubly();  
+const cell2 = new CellDoubly();  
+const cell3 = new CellDoubly();  
+const stemCells = [cell1, cell2, cell3];  
+const structureType = DOUBLY;  
 const stem = initializeStem(stemCells, structureType);
 
 ## Classes
