@@ -64,7 +64,7 @@ const stem = initializeStem(stemCells, structureType);
 ### CellSingly
 
 class: CellSingly
-  + description: includes methods for accessing the next cell
+  + description: a node that connects uni-directionally to one other node by its next property. includes methods for accessing the next cell
   + constructor: 
     + next: next cell in the sequence
 
@@ -73,8 +73,6 @@ consumption model:
     + getNext()
 
 SENTINEL.next --> CELL.next --> CELL.next --> CELL.next --> SENTINEL.next --> null
-
-description: a node that connects uni-directionally to one other node by its next property
 
 **Constructor**
 
@@ -111,8 +109,10 @@ setNext(cell):
 
 ### CellDoubly
 
+_inherits_: all fields and methods from CellSingly
+
 class: CellDoubly
-  + description: includes methods for accessing the next and prev cells
+  + description: a node that connects bi-directionally between two other nodes by its next and prev properties. includes methods for accessing the next and prev cells
   + constructor: 
     + next: next cell in the sequence
     + prev: previous cell in the sequence
@@ -123,9 +123,6 @@ consumption model:
     + getPrev()
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
-
-description: a node that connects bi-directionally between two other nodes by its next and prev properties    
-inherits: all fields and methods from CellSingly
 
 **Constructor**
 
@@ -175,7 +172,7 @@ setPrev(cell):
 ### StemSingly
 
 class: StemSingly
-  + description:  controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing next
+  + description:  a node list that interlinks other nodes by their next properties. controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing next
   + constructor: 
     + head: starting cell for the stem-cell sequence
 
@@ -191,8 +188,6 @@ consumption model:
     + delete(baseline)
 
 SENTINEL.next --> CELL.next --> CELL.next --> CELL.next --> SENTINEL.next --> null
-
-description: a node list that interlinks other nodes by their next properties.
 
 **Constructor**
 
@@ -277,8 +272,10 @@ unlinkNext(cell1, cell3):
 
 ### StemDoubly
 
+_inherits_: all fields and methods from StemSingly
+
 class: StemDoubly
-  + description:  controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing prev and next
+  + description:  a node list that interlinks other nodes by their next and prev properties. controls a system of cells interlinked within cells interlinked within cells interlinked within one stem. each cell contains methods for accessing prev and next
   + constructor: 
     + head: starting cell for the stem-cell sequence
 
@@ -296,9 +293,6 @@ consumption model:
     + delete(baseline)
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
-
-description: a node list that interlinks other nodes by their next and prev properties.    
-inherits: all fields and methods from StemSingly
 
 **Constructor**
 
