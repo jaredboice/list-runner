@@ -31,33 +31,45 @@ find "consumption model" to see the consumable methods for each class.
 
 **Import**
 
-_importing the commonly needed classes_  
-`import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';`
+_importing the commonly needed classes_
+```javascript  
+import { CellSingly, CellDoubly, StemSingly, StemDoubly } from 'list-runner';
+```
 
-_importing the constants_  
-`import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';`
+_importing the constants_
+```javascript  
+import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';
+```
 
-_importing the sidekick functions_    
-`import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';`
+_importing the sidekick functions_
+```javascript    
+import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';
+```
 
-_importing less commonly needed classes_  
-`import { SentinelSingly, SentinelDoubly } from 'list-runner';`
+_importing less commonly needed classes_
+```javascript  
+import { SentinelSingly, SentinelDoubly } from 'list-runner';
+```
 
 **Instantiate**
 
 _solo instantiation_
 
-```const cell = new CellDoubly();    
-const stem = new StemDoubly(cell);```
+```javascript
+const cell = new CellDoubly();    
+const stem = new StemDoubly(cell);
+```
 
 _connective instantiation_
 
-`const cell1 = new CellDoubly();    
+```javascript
+const cell1 = new CellDoubly();    
 const cell2 = new CellDoubly();    
 const cell3 = new CellDoubly();    
 const stemCells = [cell1, cell2, cell3];    
 const structureType = DOUBLY;    
-const stem = initializeStem(stemCells, structureType);`
+const stem = initializeStem(stemCells, structureType);
+```
 
 ## Classes
 
