@@ -183,7 +183,7 @@ consumption model:
   + methods
     + getHead()
     + interlink(cells)
-    + insert(baseline)
+    + insert(cell, baseline)
     + extract(baseline)
     + unshift(cell)
     + shift()
