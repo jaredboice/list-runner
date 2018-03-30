@@ -15,7 +15,7 @@ Nodes are referred to as cells and the list is referred to as a stem.
 
 Singly cell instances have getNext() and setNext() methods. 
 Doubly cell instances additionally have getPrev() and setPrev() methods.
-All other operations are controlled by the Stem instance. There are two types of stems for both singly and doubly data structures.
+All other operations are controlled by the Stem instance. There are two types of stems, one for singly data structures and one for doubly data structures.
 
 **_this codebase has survived 65 unit tests_**
 
