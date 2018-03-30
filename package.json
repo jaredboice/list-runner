@@ -36,11 +36,13 @@
   ],
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf build",
     "build-js": "babel src -d build",
     "copy-packagejs-for-publish": "yes | cp -rf ./package.json ./build/package.json",
     "copy-readme-for-publish": "yes | cp -rf ./README.md ./build/README.md",
     "copy-readme-npm-for-publish": "yes | cp -rf ./README-npm.md ./build/README.md",
-    "build": "npm-run-all build-js copy-packagejs-for-publish copy-readme-npm-for-publish",
+    "copy-npm-ignore-for-publish": "yes | cp -rf ./.npmignore ./build/.npmignore",
+    "build": "npm run clean && npm run build-js && npm-run-all -p copy-packagejs-for-publish copy-readme-npm-for-publish copy-npm-ignore-for-publish",
     "test": "NODE_PATH=src jest --verbose --ci",
     "test:w": "NODE_PATH=src jest --verbose --watchAll",
     "test:c": "NODE_PATH=src jest --verbose --coverage"
