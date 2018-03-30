@@ -124,7 +124,7 @@ consumption model:
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
 
-description: a node that connects bi-directionally between two other node by its next and prev properties
+description: a node that connects bi-directionally between two other nodes by its next and prev properties  
 inherits: all fields and methods from CellSingly
 
 **Constructor**
@@ -297,7 +297,7 @@ consumption model:
 
 null <-- prev.SENTINEL.next <--> prev.CELL.next <--> prev.CELL.next <--> prev.SENTINEL.next --> null
 
-description: a node list that interlinks other nodes by their next and prev properties.
+description: a node list that interlinks other nodes by their next and prev properties.  
 inherits: all fields and methods from StemSingly
 
 **Constructor**
