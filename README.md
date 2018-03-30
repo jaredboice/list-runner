@@ -23,7 +23,7 @@ All other operations are controlled by the Stem instance. There are two types of
 
 find "consumption model" to see the consumable methods for each class.
 
-## Install, Import && Instantiate
+## Install, Import & Instantiate
 
 **Install**
 
@@ -336,7 +336,7 @@ unlinkPrev(cell1, cell3):
     + cell1
     + cell3
 
-### SentinelSingly && SentinelDoubly
+### SentinelSingly & SentinelDoubly
 
 _note_: the head doubly sentinel is instantiated with prev pointing to null.
 both the singly and doubly tail sentinels are instantiated with next pointing to null. 

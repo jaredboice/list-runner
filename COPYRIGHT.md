@@ -1,1 +1,0 @@
-# Copyright 2018 Jared Boice (MIT License / Open Source)
