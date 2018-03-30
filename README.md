@@ -37,7 +37,7 @@ _importing the commonly needed classes_
 _importing the constants_  
 `import { SENTINEL, CELL, SINGLY, DOUBLY } from 'list-runner';`
 
-_importing the sidekick functions  
+_importing the sidekick functions_    
 `import { initializeStem, findForward, findBackward, loopForward, loopBackward, countForward, countBackward } from 'list-runner';`
 
 _importing less commonly needed classes_  
