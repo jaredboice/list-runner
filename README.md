@@ -2,7 +2,7 @@
 
 # Copyright 2018 Jared Boice (MIT License / Open Source)
 
-# List-Runner Documentation
+# List-Runner - Documentation
 
 ![List-Runner](screenshots/list-runner-logo.png "Within Cells Interlinked")
 
@@ -87,14 +87,14 @@ const prevCell = cell.getPrev(); // only DOUBLY data-structure
 /* STEM OPERATIONS */
 const head = stem.getHead();
 const tail = stem.getTail(); // only DOUBLY data-structure
-insert(cell, baseline);
-extract(baseline);
-unshift(cell);
-shift();
-push(cell); // only DOUBLY data-structure
-pop(); // only DOUBLY data-structure
-replace(cell, baseline);
-delete(baseline);
+insert(cell, baseline); // returns true || false based on success
+extract(baseline); // returns extracted cell || false based on success
+unshift(cell); // returns true || false based on success
+shift(); // returns extracted cell || false based on success
+push(cell); // only DOUBLY data-structure / returns true || false based on success
+pop(); // only DOUBLY data-structure / returns extracted cell || false based on success
+replace(cell, baseline); // returns true || false based on success
+delete(baseline); // returns true || false based on success
 ```
 
 _code examples: sidekick functions_
@@ -117,7 +117,7 @@ const totalCount2 = countBackward(baseline);
 
 /* findForward / findBackward comparator callback examples */
 
-// pure
+// standard
 export const findComparator1 = (cell) => {
   return cell.id === 'KD6-3.7';
 };
@@ -134,8 +134,8 @@ const foundCell3 = findForward(baseline, myComparator);
 
 /* runForward / runBackward callback examples */
 
-// pure
-export const runCallBack2 = (cell, callBackParams) => {
+// standard
+export const runCallBack1 = (cell, callBackParams) => {
     // do stuff
     const continueLoop = cell.id !== id;
     return continueLoop;
