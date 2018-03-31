@@ -2,7 +2,7 @@
   "name": "list-runner",
   "author": "jared boice",
   "description": "a lightweight linked-list implementation that offers both Singly (next) and Doubly data structures (next and previous)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -48,8 +48,7 @@
     "test:c": "NODE_PATH=src jest --verbose --coverage"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "list-runner": "^1.0.1"
+    "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
