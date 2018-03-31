@@ -1,4 +1,4 @@
-import { CELL } from '../constants';
+import { CELL } from "../constants";
 
 /* 
   class: CellSingly
@@ -7,17 +7,17 @@ import { CELL } from '../constants';
     next: next cell in the sequence
 */
 class CellSingly {
-    constructor(next = null, type = CELL) {
-        this.type = type;
-        this.next = next;
-    }
+  constructor(next = null, type = CELL) {
+    this.type = type;
+    this.next = next;
+  }
 
-    getNext() {
-        return this.next;
-    }
-    setNext(cell){
-        this.next = cell;
-    }
+  getNext() {
+    return this.next;
+  }
+  setNext(cell) {
+    this.next = cell;
+  }
 }
 
-export default CellSingly;
+export { CellSingly };

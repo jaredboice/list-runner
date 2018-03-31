@@ -1,6 +1,6 @@
-import StemSingly from './classes/StemSingly';
-import StemDoubly from './classes/StemDoubly';
-import { SINGLY, DOUBLY, SENTINEL } from './constants';
+import { StemSingly } from "./classes/StemSingly";
+import { StemDoubly } from "./classes/StemDoubly";
+import { SINGLY, DOUBLY, SENTINEL } from "./constants";
 
 /* function: interlinkStem()
     description: takes an array of instantiated cells and interlinks them into a newly instantiated stem
@@ -10,18 +10,18 @@ import { SINGLY, DOUBLY, SENTINEL } from './constants';
     returns: Stem instance
 */
 export const initializeStem = (cells, structureType = SINGLY) => {
-    let Stem; 
-    switch(structureType){
-        case SINGLY:
-            Stem = StemSingly;
-            break;
-        case DOUBLY:
-            Stem = StemDoubly;
-            break;
-    }
-    const transientStem = new Stem(cells[0]);
-    transientStem.interlink(cells);
-    return transientStem;
+  let Stem;
+  switch (structureType) {
+    case SINGLY:
+      Stem = StemSingly;
+      break;
+    case DOUBLY:
+      Stem = StemDoubly;
+      break;
+  }
+  const transientStem = new Stem(cells[0]);
+  transientStem.interlink(cells);
+  return transientStem;
 };
 
 /* function: findForward()
@@ -32,14 +32,14 @@ export const initializeStem = (cells, structureType = SINGLY) => {
     returns: found cell || false
 */
 export const findForward = (baseline, comparator) => {
-    let breakLoop = false;
-    let cell = baseline;
-    do {
-        breakLoop = comparator(cell);
-        if(breakLoop) return cell;
-        cell = cell.getNext();
-    } while(cell.type !== SENTINEL);
-    return false;
+  let breakLoop = false;
+  let cell = baseline;
+  do {
+    breakLoop = comparator(cell);
+    if (breakLoop) return cell;
+    cell = cell.getNext();
+  } while (cell.type !== SENTINEL);
+  return false;
 };
 
 /* function: findBackward()
@@ -50,14 +50,14 @@ export const findForward = (baseline, comparator) => {
     returns: found cell || false
 */
 export const findBackward = (baseline, comparator) => {
-    let breakLoop = false;
-    let cell = baseline;
-    do {
-        breakLoop = comparator(cell);
-        if(breakLoop) return cell;
-        cell = cell.getPrev();
-    } while(cell.type !== SENTINEL);
-    return false;
+  let breakLoop = false;
+  let cell = baseline;
+  do {
+    breakLoop = comparator(cell);
+    if (breakLoop) return cell;
+    cell = cell.getPrev();
+  } while (cell.type !== SENTINEL);
+  return false;
 };
 
 /* function: runForward()
@@ -69,13 +69,13 @@ export const findBackward = (baseline, comparator) => {
     returns: the last cell instance upon loop termination
 */
 export const runForward = (baseline, callBack, callBackParams) => {
-    let cell = baseline;
-    let shortCircuit = null;
-    do {
-        shortCircuit = callBack(cell, callBackParams);
-        cell = cell.getNext();
-    } while(cell != null && cell.type !== SENTINEL  && !shortCircuit);
-    return cell;
+  let cell = baseline;
+  let shortCircuit = null;
+  do {
+    shortCircuit = callBack(cell, callBackParams);
+    cell = cell.getNext();
+  } while (cell != null && cell.type !== SENTINEL && !shortCircuit);
+  return cell;
 };
 
 /* function: runBackward()
@@ -87,13 +87,13 @@ export const runForward = (baseline, callBack, callBackParams) => {
     returns: the last cell instance upon loop termination
 */
 export const runBackward = (baseline, callBack, callBackParams) => {
-    let cell = baseline;
-    let shortCircuit = null;
-    do {
-        shortCircuit = callBack(cell, callBackParams);
-        cell = cell.getPrev();
-    } while(cell != null && cell.type !== SENTINEL  && !shortCircuit);
-    return cell;
+  let cell = baseline;
+  let shortCircuit = null;
+  do {
+    shortCircuit = callBack(cell, callBackParams);
+    cell = cell.getPrev();
+  } while (cell != null && cell.type !== SENTINEL && !shortCircuit);
+  return cell;
 };
 
 /* function: countForward(baseline)
@@ -102,15 +102,14 @@ export const runBackward = (baseline, callBack, callBackParams) => {
         baseline: the cell at which to begin the counting process
     returns: the total count of all interlinked cells
 */
-export const countForward = (baseline) => {
-    let count = 0;
-    let nextCell = baseline;
-    do {
-        count++;
-        nextCell = nextCell.getNext();
-    }
-    while(nextCell != null && nextCell.type !== SENTINEL);
-    return count;
+export const countForward = baseline => {
+  let count = 0;
+  let nextCell = baseline;
+  do {
+    count++;
+    nextCell = nextCell.getNext();
+  } while (nextCell != null && nextCell.type !== SENTINEL);
+  return count;
 };
 
 /* function: countBackward(baseline)
@@ -119,13 +118,12 @@ export const countForward = (baseline) => {
         baseline: the cell at which to begin the counting process
     returns: the total count of all interlinked cells
 */
-export const countBackward = (baseline) => {
-    let count = 0;
-    let nextCell = baseline;
-    do {
-        count++;
-        nextCell = nextCell.getPrev();
-    }
-    while(nextCell != null && nextCell.type !== SENTINEL);
-    return count;
-}; 
+export const countBackward = baseline => {
+  let count = 0;
+  let nextCell = baseline;
+  do {
+    count++;
+    nextCell = nextCell.getPrev();
+  } while (nextCell != null && nextCell.type !== SENTINEL);
+  return count;
+};
