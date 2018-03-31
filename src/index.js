@@ -1,32 +1,9 @@
-// import {
-//   CellSingly,
-//   CellDoubly,
-//   StemSingly,
-//   StemDoubly,
-//   SentinelSingly,
-//   SentinelDoubly
-// } from "./src/classes";
-
-// import { SENTINEL, CELL, SINGLY, DOUBLY } from "./constants";
-
-// import {
-//   initializeStem,
-//   findForward,
-//   findBackward,
-//   runForward,
-//   runBackward,
-//   countForward,
-//   countBackward
-// } from "./sidekick";
-
-export {
-  CellSingly,
-  CellDoubly,
-  StemSingly,
-  StemDoubly,
-  SentinelSingly,
-  SentinelDoubly
-} from "./classes";
+export { CellSingly } from "./classes/CellSingly";
+export { CellDoubly } from "./classes/CellDoubly";
+export { StemSingly } from "./classes/StemSingly";
+export { StemDoubly } from "./classes/StemDoubly";
+export { SentinelSingly } from "./classes/SentinelSingly";
+export { SentinelDoubly } from "./classes/SentinelDoubly";
 
 export { SENTINEL, CELL, SINGLY, DOUBLY } from "./constants";
 
