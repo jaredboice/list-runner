@@ -100,7 +100,7 @@ delete(baseline);
 ```javascript
 // assume the following are not strings
 const comparator = 'a callback function that returns true when the right cell is found'; // receives each cell
-const callBackParams 'any kind of parameters that you want to pass to the callBack function';
+const callBackParams = 'any kind of parameters that you want to pass to the callBack function';
 const callBack = 'a custom callback function that will receive each cell from a loop and also callBackParams'; // receives each cell and callBackParams
 
 /* SIDEKICK FUNCTIONS */
