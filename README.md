@@ -71,7 +71,7 @@ const structureType = DOUBLY; // imported constant
 const stem = initializeStem(stemCells, structureType);
 ```
 
-_examples_
+_code examples: stem and cell classes_
 
 ```javascript
 
@@ -96,6 +96,8 @@ pop(); // only DOUBLY data-structure
 replace(cell, baseline);
 delete(baseline);
 ```
+
+_code examples: sidekick functions_
 
 ```javascript
 // assume the following are not strings
