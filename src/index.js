@@ -26,7 +26,7 @@ export {
   StemDoubly,
   SentinelSingly,
   SentinelDoubly
-} from "./src/classes";
+} from "./classes";
 
 export { SENTINEL, CELL, SINGLY, DOUBLY } from "./constants";
 
