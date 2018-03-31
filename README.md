@@ -107,6 +107,7 @@ const callBack = 'a custom callback function that will receive each cell from a 
 interlink(cells);
 const foundCell1 = findForward(baseline, comparator);
 const foundCell2 = findBackward(baseline, comparator);
+// lastCellInLoop1 will be cell.type === SENTINEL if it loops to the edge of the stem (by not triggering a custom short-circuit condition)
 const lastCellInLoop1 = runForward(baseline, callBack, callBackParams);
 const lastCellInLoop2 = runBackward(baseline, callBack, callBackParams);
 const totalCount1 = countForward(baseline);
@@ -133,18 +134,22 @@ const foundCell3 = findForward(baseline, myComparator);
 
 // pure
 export const runCallBack2 = (cell, callBackParams) => {
-    return cell.id === id;
-
+    // do stuff
+    const continueLoop = cell.id !== id;
+    return continueLoop;
 };
 
 // curried
 export const runCallBack2 = (id) => {
     return (cell, callBackParams) => {
-        return cell.id === id;
+      // do stuff
+      const continueLoop = cell.id !== id;
+      return continueLoop;
     };
 };
 
 const myCallBack = runCallBack2('KD6-3.7', 'any other arbitrary parameters');
+// lastCellInLoop3 will be cell.type === SENTINEL if it loops to the edge of the stem (by not triggering a custom short-circuit condition)
 const lastCellInLoop3 = runForward(baseline, myCallBack, callBackParams);
 ```
 
