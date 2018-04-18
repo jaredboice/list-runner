@@ -2,7 +2,7 @@
   "name": "list-runner",
   "author": "jared boice",
   "description": "a lightweight linked-list implementation that offers both Singly (next) and Doubly data structures (next and previous)",
-  "version": "1.0.83",
+  "version": "1.0.85",
   "license": "MIT",
   "repository": {
     "type": "git",
