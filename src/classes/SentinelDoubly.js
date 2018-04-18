@@ -14,4 +14,4 @@ class SentinelDoubly extends SentinelSingly {
     }
 }
 
-export { SentinelDoubly }; // eslint-disable-line import/prefer-default-export
+export { SentinelDoubly }; // eslint-disable-line 
