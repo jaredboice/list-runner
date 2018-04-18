@@ -26,7 +26,7 @@ describe('doubly: basic navigation', () => {
         stem1 = initTestData();
     });
     afterEach(() => {
-        console.log('doubly: basic navigation => test complete');
+        console.log('doubly: basic navigation => test complete'); // eslint-disable-line no-console
     });
     it('getHead should return the  head cell (cells[0])', () => {
         targetCell1 = cells[0];
@@ -91,7 +91,7 @@ describe('doubly: extracts', () => {
         stem1 = initTestData();
     });
     afterEach(() => {
-        console.log('doubly: extracts => test complete');
+        console.log('doubly: extracts => test complete'); // eslint-disable-line no-console
     });
     it('extracting the head cell should interlink properly', () => {
         stem1.extract(stem1.sentinelHead);
@@ -124,7 +124,7 @@ describe('doubly: replaces', () => {
         newCell1.id = parameters.idCounter++;
     });
     afterEach(() => {
-        console.log('doubly: replaces => test complete');
+        console.log('doubly: replaces => test complete'); // eslint-disable-line no-console
     });
     it('replacing the cell after sentinelHead should interlink properly', () => {
         stem1.replace(newCell1, stem1.sentinelHead);
