@@ -72,7 +72,6 @@ const stem = initializeStem(stemCells, structureType);
 _code examples: stem and cell classes_
 
 ```javascript
-
 // assume the following are not strings
 const baseline = 'some arbitrary cell on the stem'; // substitute a cell on the stem
 const cell = 'some new cell'; // substitute a newly instantiated cell
