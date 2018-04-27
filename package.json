@@ -5,7 +5,7 @@
     "email": "jaredboice@gmail.com"
   },
   "description": "a lightweight linked-list implementation that offers both Singly (next) and Doubly data structures (next and previous)",
-  "version": "1.0.93",
+  "version": "1.0.94",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -53,8 +53,7 @@
     "test:c": "NODE_PATH=src jest --verbose --coverage"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "hoek": "^5.0.3"
+    "babel-runtime": "^6.26.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
