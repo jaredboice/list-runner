@@ -8,6 +8,11 @@ _"Within Cells Interlinked"_
 
 get the [full documentation](https://github.com/jaredboice/list-runner) at gitHub.
 
+![List-Runner](screenshots/list-runner-logo.png "Within Cells Interlinked")
+
+## Donations - Bitcoin: 19XgiRojJnv9VDhyW9HmF6oKQeVc7k9McU 
+(use this address until 2022)
+
 **_this codebase has survived 65 unit tests_**
 
 ## Description

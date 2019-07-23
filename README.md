@@ -6,6 +6,9 @@
 
 ![List-Runner](screenshots/list-runner-logo.png "Within Cells Interlinked")
 
+## Donations - Bitcoin: 19XgiRojJnv9VDhyW9HmF6oKQeVc7k9McU 
+(use this address until 2022)
+
 **_this codebase has survived 65 unit tests_**
 
 ## Description
